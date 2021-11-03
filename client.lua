@@ -62,12 +62,12 @@ function TeleportToLocation(location)
 	end
 end
 
-Citizen.CreateThread(function()				
+Citizen.CreateThread(function()
 	while true do
 		if active_machines ~= nil then
 			for k, v in pairs(active_machines) do
 				if v.time > 0 then
-					v.time = v.time - 1 
+					v.time = v.time - 1
 				else
 					TriggerServerEvent("qb-cryptomining:server:addCryptoCoins", v.reward)
 					DeleteObject(v.object)
@@ -116,7 +116,7 @@ function InstallCPU(name, reward, itemname)
 			machine.reward = reward
 			machine.time = Config.MiningLab["mining_time"][name]
 			machine.coords = coords
-			table.insert(active_machines, machine)
+			active_machines[#active_machines+1] = machine
 			PlaceObjectOnGroundProperly(machine.object)
 			FreezeEntityPosition(machine.object, true)
 			QBCore.Functions.Notify('Installation Successfull','success')
