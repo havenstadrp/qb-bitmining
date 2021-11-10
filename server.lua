@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 RegisterServerEvent('qb-cryptomining:server:addCryptoCoins')
 AddEventHandler('qb-cryptomining:server:addCryptoCoins', function(reward)
     local src = source

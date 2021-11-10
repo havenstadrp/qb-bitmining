@@ -37,24 +37,24 @@ Config.ShopItems = {
     slots = 3
 }
 ----------------------------end of optional section--------------
- 
+
 Config.ExitCoords = vector4(-185.3246, -759.1964, 30.454008, 334.09106) -- coords to enter the mining facility
 
 
 Config.MiningLab = {
-   
+
     coords = vector3(2155.0, 2921.08, -81.08),
     mining_time =
     {
         ["Standard CPU"] = 60, -- mining time for different rigs in seconds.
         ["E2 CPU"] = 120,
         ["Quantum CPU"] = 180,
-    } 
+    }
 }
 
 -- rewards for each rig in crypto-------
 Config.Reward = {
-    ["standard_cpu"] = 20, 
+    ["standard_cpu"] = 20,
     ["e2_cpu"] = 50,
     ["quantum_cpu"] = 100,
 }

@@ -1,4 +1,4 @@
-local isLoggedIn = false
+local QBCore = exports['qb-core']:GetCoreObject()
 local inRange = false
 local prop_model = {
 	["Standard CPU"] = "v_corp_servercln",
