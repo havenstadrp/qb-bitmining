@@ -35,9 +35,9 @@ Three different rigs which yield different cyprto coins.
 
 Images are in the folder.. Make sure to add it to ```qb-inventory/html/images```
 
-Dependency - https://github.com/pushkart2/memorygame
+Dependency - https://github.com/ultrahacx/ultra-voltlab
 
-Memory game
+ultra-voltlab minigame
 
 
 Use -
