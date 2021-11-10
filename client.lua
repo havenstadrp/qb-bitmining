@@ -79,20 +79,20 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterNetEvent("qb-cryptomining:client:installCPU")
-AddEventHandler("qb-cryptomining:client:installCPU", function(name, reward, item)
+RegisterNetEvent("qb-cryptomining:client:installCPU", function(name, reward, item)
 	local ped = PlayerPedId()
 	local pos = GetEntityCoords(ped)
 	if #(pos - Config.MiningLab["coords"]) < 50.0 then
-		exports["memorygame"]:thermiteminigame(10, 3, 3, 10,
-		function() -- success
-			InstallCPU(name, reward, item.name)
-		end,
-		function() -- failure
-			QBCore.Functions.Notify("You can do better than this", "error")
-   	 	end)
-	else
-		QBCore.Functions.Notify('Not a suitable location for installing','error')
+		TriggerEvent('ultra-voltlab', 60, function(result)
+			if result == 0 then
+				QBCore.Functions.Notify('Installation Failed','error')
+			elseif result == 1 then
+				InstallCPU(name, reward, item.name)
+				QBCore.Functions.Notify('Good job!', 'success')
+			else
+				QBCore.Functions.Notify('Something went wrong','error')
+			end
+		end)
 	end
 end)
 
